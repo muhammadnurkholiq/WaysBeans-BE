@@ -32,7 +32,7 @@ const port = process.env.PORT || 5000;
 app.use("/api/v1/", router);
 
 app.get("/", (req, res) => {
-  res.send("Hello Developer!!");
+  res.send("Hello Developer!!!");
 });
 
 server.listen(port, () => {
