@@ -69,7 +69,7 @@ router.get("/carts", auth, getCarts);
 router.get("/cart/:id", auth, getCart);
 router.post("/cart/:id", auth, addCart);
 router.patch("/cart/:id", auth, updateCart);
-router.delete("/cart/:id", deleteCart);
+router.delete("/cart/:id", auth, deleteCart);
 
 // transaction
 router.get("/transactions", auth, getTransactions);

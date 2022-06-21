@@ -245,23 +245,18 @@ exports.updateCart = async (req, res) => {
 exports.deleteCart = async (req, res) => {
   try {
     // get id user
+    const idUser = req.user.id;
     const id = req.params;
 
     const cartExist = await cart.findOne({
       idProduct: id,
+      idBuyer: idUser,
     });
 
     // delete cart
     await cart.destroy({
       where: {
         idProduct: cartExist.idProduct,
-      },
-    });
-
-    // delete transaction detail
-    await transactionDetail.destroy({
-      where: {
-        idProduct: id,
       },
     });
 
