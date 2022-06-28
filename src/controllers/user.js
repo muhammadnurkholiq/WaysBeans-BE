@@ -10,7 +10,7 @@ exports.getUsers = async (req, res) => {
     // get data exist
     let dataExist = await user.findAll({
       attributes: {
-        exclude: ["createdAt", "updatedAt", "phone", "address"],
+        exclude: ["createdAt", "updatedAt", "password", "phone", "address"],
       },
     });
 
